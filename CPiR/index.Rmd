@@ -1,0 +1,42 @@
+---
+title: "Cool Places in Rome"
+author: "Federico Di Martino"
+date: "25 January 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Date
+01-25-2018
+
+25th of January 2018!
+
+
+
+
+## Map
+
+```{r cars, echo = TRUE}
+library(leaflet)
+library(dplyr)
+
+RomePlaces <- data.frame(lat = c(41.893330, 41.890116, 41.886177), lng = c(12.482871,12.492282, 12.485486))
+RomePlacesNames <- c("Campidoglio", "Colosseo", "Circo Massimo")
+
+RomePlacesMap <- RomePlaces %>%
+    leaflet() %>%
+    addTiles() %>% 
+    addMarkers(popup = RomePlacesNames) 
+RomePlacesMap
+
+
+
+## 
+
+```
+
+***
