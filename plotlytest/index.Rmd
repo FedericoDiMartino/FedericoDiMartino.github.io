@@ -1,0 +1,33 @@
+---
+title: "Hello Plotly"
+author: "Federico Di Martino"
+date: "29 January 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+## Date
+
+The date is January 29th 2018.
+
+
+## Using plotly with the cars dataset
+```{r , include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(plotly)
+g <- ggplot(data = cars, aes(x = speed, y = dist))
+g <- g + geom_point() +geom_smooth()
+p <- ggplotly(g)
+
+```
+
+```{r, echo = FALSE}
+p
+
+```
